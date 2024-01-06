@@ -134,7 +134,7 @@ function project_compat(pkg, relaxed, lowerbound; prn=false, status="")
                     vers=vers_array[1]*'.'*vers_array[2]
                 end
                 if lowerbound
-                    push!(compat, (String(pkg)=>String(vers)))
+                    push!(compat, (String(pkg)=>String("^"*vers)))
                 elseif relaxed
                     push!(compat, (String(pkg)=>String("~"*vers)))
                 else

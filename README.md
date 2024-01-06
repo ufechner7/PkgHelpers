@@ -48,8 +48,12 @@ The following compat entries will be added for each of your direct dependencies:
 |-------------------------------|:------------:|:--------------:|:----------:|
 | freeze(Pkg)                   | "=1.2.3"     | [1.2.3, 1.2.3] | equality   |
 | freeze(Pkg; relax=true)       | "~1.2.3"     | [1.2.3, 1.3.0) | tilde      |
-| lower_bound(Pkg)              | "1.2.3"      | [1.2.3, 2.0.0) | caret      |
-| lower_bound(Pkg; relax=true)  | "1.2"        | [1.2.0, 2.0.0) | caret      |
+| lower_bound(Pkg)              | "^1.2.3"     | [1.2.3, 2.0.0) | caret      |
+| lower_bound(Pkg; relax=true)  | "^1.2"       | [1.2.0, 2.0.0) | caret      |
+
+Note that the care symbol (`^`) is not necessary in a version specifier.
+Versions without a specifier are interpreted as a lower bound by default.
+We include it only to be more explicit.
 
 If you tested your project with the Julia versions 1.9 and 1.10, use the call
 ```julia
@@ -57,7 +61,7 @@ freeze(Pkg; julia="~1.9, ~1.10")
 ```
 If you want to set as lower bound an older Julia version, you can also do that:
 ```julia
-lower_bound(Pkg; julia="1.6")
+lower_bound(Pkg; julia="^1.6")
 ```
 Optionally you can also call the function:
 ```

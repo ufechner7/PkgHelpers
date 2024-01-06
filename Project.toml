@@ -1,7 +1,7 @@
 name = "PkgHelpers"
 uuid = "a562b63c-6e73-49f2-82ca-bd0905bcffd6"
 authors = ["Uwe Fechner <uwe.fechner.msc@gmail.com> and contributors"]
-version = "0.3.0"
+version = "0.3.1"
 
 [deps]
 Pkg = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
